@@ -32,7 +32,7 @@ const ItemList = (props)=>{
             ) 
             : 
             (
-                <span>Empty List</span>
+                <span>No List Found</span>
             )
             }
             
