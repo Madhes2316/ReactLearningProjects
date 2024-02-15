@@ -1,0 +1,27 @@
+.mainDiv{
+    text-align: center;
+    margin-top: 15%;
+    justify-content: center;
+}
+
+.colorBox {
+    width: 165px;
+    height: 165px;
+    border: 2px solid black;
+    margin-left: 43%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .togglebutton{
+    margin-top: 0.3rem;
+    font-size: 30px;
+  }
+
+  .colorInput{
+    margin-top: 0.3rem;
+    margin-right: 7px;
+  }

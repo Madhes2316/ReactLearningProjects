@@ -1,0 +1,33 @@
+/* .mainAppDiv{
+    background-color: aquamarine;
+} */
+
+
+
+.inputBox{
+    margin:0 auto; 
+    width:95%;
+    padding:20px;
+    /* background:#f9f9f9; */
+    border:2px solid #333;
+    margin-left: 0;
+    }
+
+
+.PropertyListul{
+    padding:20px;
+    background:#f9f9f9;
+    border:2px solid #333;
+    margin-left: 0;
+}
+
+.PropertyListli{
+    border: 1px solid #6a51d2;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: 10px;
+    width: fit-content;
+    block-size: fit-content;
+    margin-top: 10px;
+    height: fit-content;
+  }
