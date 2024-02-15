@@ -3,39 +3,39 @@ import Footer from './Footer';
 import Header from './Header';
 import ItemList from './ItemList'
 import AddItem from './AddItem'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchItem from './SearchItem';
 
 function App() {
 
-  const initialListItems = ()=>{
-    const initialItems = [
-        {
-            id:1,
-            listItem:'Learn Something',
-            isChecked:false
-        },
-        {
-            id:2,
-            listItem:'Youtube',
-            isChecked:false
-        },
-        {
-            id:3,
-            listItem:'Job',
-            isChecked:false
-        },
-        {
-            id:4,
-            listItem:'Exercise',
-            isChecked:true
-        },
-    ]
+//   const initialListItems = ()=>{
+//     const initialItems = [
+//         {
+//             id:1,
+//             listItem:'Learn Something',
+//             isChecked:false
+//         },
+//         {
+//             id:2,
+//             listItem:'Youtube',
+//             isChecked:false
+//         },
+//         {
+//             id:3,
+//             listItem:'Job',
+//             isChecked:false
+//         },
+//         {
+//             id:4,
+//             listItem:'Exercise',
+//             isChecked:true
+//         },
+//     ]
 
-    return initialItems;
-}
+//     return initialItems;
+//   }
 
-const [listItem,setListItem] = useState(()=>initialListItems())
+const [listItem,setListItem] = useState(JSON.parse(localStorage.getItem('todo_list')) || [])
 
 function handleCheckBox(receievedId){
 
@@ -43,7 +43,7 @@ function handleCheckBox(receievedId){
         item.id === receievedId ? {...item,isChecked:!item.isChecked} : item
     )
     setListItem(modifiedList);
-
+    localStorage.setItem('todo_list',JSON.stringify(modifiedList));
 }
 
 function handleDelete(receievedId){
@@ -52,6 +52,7 @@ function handleDelete(receievedId){
         item.id !== receievedId
     )
     setListItem(afterDeleteList);
+    localStorage.setItem('todo_list',JSON.stringify(afterDeleteList));
 }
 
 const [newItem, setNewItem] = useState('');
@@ -61,6 +62,7 @@ const newListItem = (item)=>{
     const newItem = {id:newId,isChecked:false,listItem:item};
     const newListItem = [...listItem,newItem]
     setListItem(newListItem);
+    localStorage.setItem('todo_list',JSON.stringify(newListItem));
 }
 
 function handleNewItemSubmit(e){
@@ -74,6 +76,11 @@ function handleNewItemSubmit(e){
 }
 
 const [searchItem, setSearchItem] =useState('');
+
+useEffect(() =>{
+    console.log("Load time")
+},[listItem])
+
 
   return (
     <div>

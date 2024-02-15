@@ -31,3 +31,10 @@
 .itemListDltBtn{
     margin-left: 9%;
 }
+
+.addItemBtn:focus,
+addItemBtn:hover{
+    color: white;
+    background-color: lime;
+    outline: none;
+}
